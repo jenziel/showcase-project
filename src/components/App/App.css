@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap');
+
 .App {
-  text-align: center;
+  text-align: center; 
+  font-family: 'Molengo', sans-serif;
+
 }
 
 .App-logo {

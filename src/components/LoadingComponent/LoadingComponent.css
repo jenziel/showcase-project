@@ -1,0 +1,35 @@
+.Load-image{
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  .loading-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: darkblue;
+  }
+
+  .loading {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+/*   
+  @media (prefers-reduced-motion: no-preference) {
+    .Load-image {
+      animation: Load-image-spin infinite 20s linear;
+    }
+  }
+  
+
+@keyframes Load-image-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+   */
