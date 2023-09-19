@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap');
+
+:root {
+  --dark-red: #990001;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+.App {
+  text-align: center; 
+  font-family: 'Molengo', sans-serif;
+}
