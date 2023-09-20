@@ -4,6 +4,8 @@ import LoadingComponent from '../LoadingComponent/LoadingComponent';
 import { fetchCollection, fetchSelectedArtwork } from '../../apiCalls';
 import Header from '../Header/Header'
 import {useState, useEffect} from 'react'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
+import WelcomeSearchPage from '../SearchForm/SearchForm'
 
 function App() {
   const [collection, setCollection] = useState([]);
@@ -14,23 +16,49 @@ function App() {
   function getCollectionInfo(){
     fetchCollection()
     .then((data)=>{
-      setCollection(data);
+      console.log("data", data.data[0])
+      setCollection(data.data[0]);
       setIsLoading(false);
     })
     .catch((response) => {
       setError(response || "failed to fetch collection!");
     });
   }
+
   useEffect(()=>{
     getCollectionInfo()
   }, [])
 
+  const resetError = () => {
+    setError(null);
+  };
+
+  const resetLoading = () => {
+    setIsLoading(false);
+  };
   return (
     <div className="App">
       <Header />
-      {/* <header className="App-header">
-      </header> */}
-      <LoadingComponent/>
+      {newError? (
+        <ErrorComponent />
+      ) : isLoading ? (
+        <LoadingComponent/>
+        
+      ): (
+        <Routes>
+          <Route path='/' 
+          element={<WelcomeSearchPage/>}/>
+           <Route
+              path='*'
+              element={
+                <ErrorComponent
+                  message={newError}
+                  resetError={resetError}
+                  resetLoading={resetLoading}
+                />}/>
+        </Routes>
+      )}
+    
     </div>
   );
 }
