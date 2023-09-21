@@ -7,7 +7,7 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
   
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]); 
-
+  const currentSearch = searchQuery
   setIsLoading(false)
 
   const handleSearch = () => {
@@ -17,7 +17,7 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
       console.log("data", data.data)
       setSearchResults(data.data);
       setIsLoading(false)
-      updateSearchResults(data.data)
+      updateSearchResults(data.data, currentSearch)
     })
     .catch((response) => {
       setError(response || "failed to fetch collection!");
