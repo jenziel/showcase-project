@@ -1,0 +1,36 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 91vh;
+    background-image: url('../../images/AIC_BIG.jpeg');
+    background-size: 100% 100%;
+}
+.search-bar {
+    height: 5vh;
+    width: 30vw;
+    border-radius: 8px;
+    padding-left: 1vw;
+}
+.search-btn {
+    margin-left: .5vw;
+    height: 5.65vh;
+    width: 3vw;
+    border-radius: 8px;
+    background-color: lightgray;
+}
+.search-page>h1 {
+    color: var(--white);
+    font-size: 48px;
+    margin-bottom: 10vh;
+}
+.random-btn {
+    background-color: transparent;
+    border: solid 2px var(--white);
+    border-radius: 8px;
+    margin-top: 10vh;
+    height: 5vh;
+    color: var(--white);
+    width: 10vw;
+}
