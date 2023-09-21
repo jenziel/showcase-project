@@ -74,8 +74,9 @@ function App() {
   const updateSelectedPiece = (artObject) => {
     setSelectedPiece(artObject)
   }
-  const updateSearchResults = (results) => {
+  const updateSearchResults = (results, currentSearchQuery) => {
     setSearchResults(results);
+    setSearchTerm(currentSearchQuery)
   };
 
   return (
@@ -90,8 +91,8 @@ function App() {
         <Routes>
           <Route path='/' 
           element={<SearchForm setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
-          <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading}/>}/>
-           <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece}/>}/>
+          <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} searchTerm={searchTerm}/>}/>
+           <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece} searchTerm={searchTerm}/>}/>
            {/* <Route
               path='*'
               element={

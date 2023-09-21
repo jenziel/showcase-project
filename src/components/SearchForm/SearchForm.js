@@ -7,7 +7,7 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
   
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]); 
-
+  const currentSearch = searchQuery
   setIsLoading(false)
 
   const handleSearch = () => {
@@ -17,7 +17,7 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
       console.log("data", data.data)
       setSearchResults(data.data);
       setIsLoading(false)
-      updateSearchResults(data.data)
+      updateSearchResults(data.data, currentSearch)
     })
     .catch((response) => {
       setError(response || "failed to fetch collection!");
@@ -37,7 +37,8 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
   return (
     <div className='search-page'>
       <h1>The Art Institute of Chicago Collection</h1>
-      <div>
+      <h2 className="search-instructions">Enter a keyword to search from over 100,000 artworks:</h2>
+      <div className='search-bar-box'>
         <input
           className='search-bar'
           type='text'

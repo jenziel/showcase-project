@@ -1,5 +1,18 @@
-.artwork-preview
+.artwork-card
  {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start; 
+}
+
+.image-box>img{
+  height: auto;
+  width: 100%;
+
+}
+
+.image-box {
   box-sizing: border-box;
   border: 3px solid black;
   padding: 0px;
@@ -11,21 +24,47 @@
   justify-content: center; 
   overflow: hidden;
 }
+.info-box{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start;
+}
+.artist-preview,
+.date-preview{
+  color: var(--darkgray);
 
-.artwork-preview>img{
-  height: 100%;
-  width: 100%;
+}
+.title-preview{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.info-box> p {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-/* .container {
-  max-width: 300px; 
-  max-height: 200px; 
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  overflow: hidden; 
+@media (max-width: 768px) {
+  .image-box {
+    height: 50vh; 
+  }
 
-.container img {
-  width: 100%; 
-  height: 100%; 
-} */
+  .title-preview {
+    font-size: 1.2rem; 
+  }
+}
+
+
+@media (max-width: 576px) {
+  .image-box {
+    height: 35vh; 
+  }
+
+  .title-preview {
+    font-size: 1.5rem; 
+}
+.info-box {
+  margin-bottom: 1rem;
+}
+}

@@ -7,3 +7,19 @@
     padding-left: 7vw;
     padding-right: 7vw;
   }
+.back-to-search-btn {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 2rem;
+}
+  .results-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .results-container {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+  }

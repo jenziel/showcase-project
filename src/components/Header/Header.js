@@ -5,7 +5,7 @@ function Header() {
     return (
       <header className='App-header'>
         <div className='App-logo'>
-          <h1>l o g o </h1>
+          <h1>a r t i c </h1>
         </div>
       </header>
     );
