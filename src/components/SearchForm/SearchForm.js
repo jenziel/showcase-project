@@ -35,9 +35,7 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
 
 
   return (
-    // <div className='search-page'>
-    //   <h1>The Art Institute of Chicago Collection</h1>
-    //   <h2 className="search-instructions">Enter a keyword to search from over 100,000 artworks:</h2>
+    
       <div className='search-bar-box'>
         <input
           className='search-bar'
@@ -52,8 +50,6 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
         </button>
         </Link>
       </div>
-    //   <button className='random-btn'>random artwork</button>
-    // </div>
   );
 }
 export default SearchForm;

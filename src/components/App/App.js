@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import LoadingComponent from '../LoadingComponent/LoadingComponent';
-import { fetchCollection, fetchSelectedArtwork, fetchSearchResults, fetchImageById } from '../../apiCalls';
+import {  fetchSelectedArtwork, fetchSearchResults, fetchImageById } from '../../apiCalls';
 import Header from '../Header/Header'
 import {useState, useEffect} from 'react'
 import ErrorComponent from '../ErrorComponent/ErrorComponent'
@@ -17,7 +17,18 @@ function App() {
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [searchTerm, setSearchTerm] = useState("")
   const [searchResults, setSearchResults] = useState([]);
+  const [randomNum, setRandomNum] = useState(0)
 
+  function generateRandomNum() {
+    const min = 0; 
+    const max = 122737;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  
+  useEffect(() => {
+    setRandomNum(generateRandomNum)
+  })
   useEffect(() => {
     console.log("selectedPiece:", selectedPiece)
   }, [selectedPiece])
@@ -63,6 +74,7 @@ function App() {
     setSearchResults(results);
     setSearchTerm(currentSearchQuery)
   };
+  
 
   return (
     <div className="App">
@@ -75,7 +87,7 @@ function App() {
       ) : (
         <Routes>
           <Route path='/' 
-          element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
+          element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} updateSelectedPiece={updateSelectedPiece} randomNum={randomNum}/>}/>
           <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} searchTerm={searchTerm}/>}/>
            <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece} searchTerm={searchTerm}/>}/>
            {/* <Route

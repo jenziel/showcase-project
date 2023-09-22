@@ -20,4 +20,8 @@
     height: 5vh;
     color: var(--white);
     width: 10vw;
+    cursor: pointer;
+}
+.random-btn:hover {
+    background-color: var(--faded-teal);
 }
