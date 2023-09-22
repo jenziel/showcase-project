@@ -5,7 +5,7 @@ function fetchSearchResults(query){
   // ?limit=100&page=100
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
+      throw new Error(`${response.status} ${response.statusText}`);
     }
     console.log(query)
     return response.json();
@@ -16,7 +16,7 @@ function fetchSearchResults(query){
     return fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
    .then((response) => {
      if (!response.ok) {
-       throw new Error(`Error ${response.status}: ${response.statusText}`);
+       throw new Error(`${response.status} ${response.statusText}`);
      }
      return response.json();
    })
@@ -26,7 +26,7 @@ function fetchSearchResults(query){
   return fetch(`https://www.artic.edu/iiif/2/${id}/full/843,/0/default.jpg`)
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
+      throw new Error(`${response.status} ${response.statusText}`);
     }
     return response.json();
   })
