@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "api_link": "https://api.artic.edu/api/v1/artworks/230694",
+      "api_model": "artworks",
+      "id": 230694,
+      "is_boosted": false,
+      "thumbnail": {
+        "alt_text": "A work made of color pochoir with gouache on ivory wove paper.",
+        "width": 3000,
+        "lqip": "data:image/gif;base64,R0lGODlhCAAFAPUAAEtSAHg2fyVx…nAyqJPqPQI2IoHAYbBkKioQQIHgVAMHFAGhZSYnHJYCqmIAA7",
+        "height": 1963
+      },
+      "timestamp": "2023-09-21T23:23:38-05:00",
+      "title": "Horse, Rider, and Clown, from Jazz",
+      "_score": 67.31374
+    },
+    {
+      "api_link": "https://api.artic.edu/api/v1/artworks/38636",
+      "api_model": "artworks",
+      "id": 38636,
+      "is_boosted": false,
+      "thumbnail": {
+        "alt_text": "A work made of collograph on white wove paper.",
+        "width": 3000,
+        "lqip": "data:image/gif;base64,R0lGODlhBwAFAPUAAKKPeKiQiLSn…hQE3G07lMNo8BIuRoVBKEQOFggHwoAsBCEsFwRAoGyBIEADs=",
+        "height": 2202
+      },
+      "timestamp": "2023-03-01T03:22:30-06:00",
+      "title": "Sun King with Clown",
+      "_score": 64.61606
+    }
+  ]
+}

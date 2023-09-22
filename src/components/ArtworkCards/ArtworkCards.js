@@ -40,10 +40,10 @@ function ArtworkCards({
         <div className='image-box'>
           <img src={thumbnailId} alt={alt} key={id} id={id}></img>
         </div>
-        <div className='info-box'>
-          <p className='title-preview'>{title}</p>
-          <p className='artist-preview'>Artist</p>
-          <p className='date-preview'>Date</p>
+        <div className="info-box">
+        <p className="title-preview">{title}</p>
+        <p className="artist-preview">Artist</p>
+        <p className="date-preview">Date</p>
         </div>
       </Link>
     </div>
