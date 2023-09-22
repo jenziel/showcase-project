@@ -15,6 +15,7 @@ describe("500 error when submitting a searchQuery", () => {
       "throw500"
     );
   });
+
   it("should display a 500 error when there is one.", () => {
     cy.visit("http://localhost:3000/");
     cy.get(".search-bar").type("clown");
@@ -24,4 +25,32 @@ describe("500 error when submitting a searchQuery", () => {
   });
 });
 
-describe("")
+
+describe("404 error when submitting a searchQuery", () => {
+  beforeEach(() => {
+    cy.intercept("GET", searchUrl, {
+      statusCode: 404,
+      body: {
+        fixture: "error404.json",
+      },
+      headers: {
+        "Content-Type": "application/json",
+      }}).as(
+      "throw404"
+    );
+  });
+  it("should display a 404 error when there is one.", () => {
+    cy.visit("http://localhost:3000/");
+    cy.get(".search-bar").type("clown");
+    cy.get(".search-btn").click();
+    cy.wait("@throw404");
+    cy.contains("Error: 404 Not Found").should("be.visible");
+  });
+});
+
+describe("be able to handle a route that doesn't exist", () => {
+it("should display an error for a url that does not exist", () => {
+  cy.visit("http://localhost:3000/potato");
+  cy.contains("That Page Doesn't Exist.").should("be.visible");
+})
+});
