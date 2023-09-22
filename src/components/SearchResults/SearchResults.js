@@ -2,18 +2,25 @@ import './SearchResults.css'
 import ArtworkCards from '../ArtworkCards/ArtworkCards'
 import { useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import SearchForm from '../SearchForm/SearchForm'
 
-function SearchResults({results, getArtworkById, getImageId, setIsLoading, searchTerm}){
+function SearchResults({results, getArtworkById, getImageId, setIsLoading, searchTerm, setError, updateSearchResults}){
   console.log("resultsss", results)
   console.log(getArtworkById)
 
     return (
         <div> 
-          <div className='results-header'>
+          <div className='results-search-bar'>
+            <div className='results-top-row'>
+            <h1>Search The Collection</h1>
             <Link to='/'>
-        <button className='back-to-search-btn'>Back to Search</button>
+        <button className='back-to-search-btn'>Back to Home</button>
             </Link>
-        <h1>{`Showing ${results.length} results for ${searchTerm}`}</h1>
+            </div>
+            <SearchForm setError={setError} setIsLoading={setIsLoading} updateSearchResults={updateSearchResults}/>
+          </div>
+          <div className='results-header'>
+        <h3>{`Showing ${results.length} results for ${searchTerm}`}</h3>
 
           </div>
         <div className="results-container">

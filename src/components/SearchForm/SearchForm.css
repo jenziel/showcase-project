@@ -1,4 +1,4 @@
-.search-page {
+/* .search-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-image: url('../../images/AIC_BIG.jpeg');
     background-size: 100% 100%;
     padding: .5rem;
-}
+} */
 .search-bar {
     height: 5vh;
     width: 30vw;
@@ -29,11 +29,11 @@
     margin-bottom: 15vh;
     margin-top: 10vh;
 }
-.search-instructions {
+/* .search-instructions {
     color: var(--white);
     margin-bottom: 4vh;
-}
-.random-btn {
+} */
+/* .random-btn {
     background-color: transparent;
     border: solid 2px var(--white);
     border-radius: 8px;
@@ -41,7 +41,7 @@
     height: 5vh;
     color: var(--white);
     width: 10vw;
-}
+} */
 .search-bar-box{
     display: flex;
     flex-direction: row;

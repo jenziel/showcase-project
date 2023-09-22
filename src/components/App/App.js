@@ -9,9 +9,9 @@ import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
 import ArtworkDetails from '../ArtworkDetails/ArtworkDetails'
 import ArtworkCards from '../ArtworkCards/ArtworkCards';
+import SearchWelcomePage from '../SearchWelcomePage/SearchWelcomePage'
 
 function App() {
-  const [collection, setCollection] = useState([]);
   const [newError, setError] = useState(null); 
   const [isLoading, setIsLoading] = useState(false);
   const [selectedPiece, setSelectedPiece] = useState(null);
@@ -21,18 +21,7 @@ function App() {
   useEffect(() => {
     console.log("selectedPiece:", selectedPiece)
   }, [selectedPiece])
-  // function getCollectionInfo(){
-  //   fetchCollection()
-  //   .then((data)=>{
-  //     console.log("data", data.data[0])
-  //     setCollection(data.data[0]);
-  //     setIsLoading(false);
-  //   })
-  //   .catch((response) => {
-  //     setError(response || "failed to fetch collection!");
-  //   });
-  // }
-
+  
   function getArtworkById(id){
     fetchSelectedArtwork(id)
     .then((data)=>{
@@ -58,10 +47,6 @@ function App() {
   useEffect(() => {
     console.log("newError:", newError)
   }, [newError])
-
-  // useEffect(()=>{
-  //   getCollectionInfo()
-  // }, [])
 
   const resetError = () => {
     setError(null);
@@ -90,8 +75,8 @@ function App() {
       ) : (
         <Routes>
           <Route path='/' 
-          element={<SearchForm setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
-          <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} searchTerm={searchTerm}/>}/>
+          element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
+          <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} searchTerm={searchTerm}/>}/>
            <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece} searchTerm={searchTerm}/>}/>
            {/* <Route
               path='*'
