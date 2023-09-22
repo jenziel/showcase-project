@@ -23,3 +23,5 @@ describe("500 error when submitting a searchQuery", () => {
     cy.contains("Error: 500 Internal Server Error").should("be.visible");
   });
 });
+
+describe("")
