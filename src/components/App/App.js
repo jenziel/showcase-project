@@ -67,10 +67,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* {newError? (
-        <ErrorComponent />
-      ) :  */}
-      {isLoading ? (
+      {newError? (
+        <ErrorComponent newError={newError}
+        resetError={resetError}
+        resetLoading={resetLoading}/>
+      ) : 
+      isLoading ? (
         <LoadingComponent/> 
       ) : (
         <Routes>
@@ -78,14 +80,14 @@ function App() {
           element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
           <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} searchTerm={searchTerm}/>}/>
            <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece} searchTerm={searchTerm}/>}/>
-           {/* <Route
+           <Route
               path='*'
               element={
                 <ErrorComponent
-                  message={newError}
+                  newError={newError}
                   resetError={resetError}
                   resetLoading={resetLoading}
-                />}/> */}
+                />}/>
         </Routes>
       )}
     
