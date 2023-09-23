@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/showcase-project/static/css/main.bb436006.css",
+    "main.js": "/showcase-project/static/js/main.dead31ae.js",
+    "static/media/AIC_BIG.jpeg": "/showcase-project/static/media/AIC_BIG.e950cf5de2ed63a11ff5.jpeg",
+    "static/media/pencil.png": "/showcase-project/static/media/pencil.7916e207b66e44c69b5f.png",
+    "index.html": "/showcase-project/index.html",
+    "main.bb436006.css.map": "/showcase-project/static/css/main.bb436006.css.map",
+    "main.dead31ae.js.map": "/showcase-project/static/js/main.dead31ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb436006.css",
+    "static/js/main.dead31ae.js"
+  ]
+}
