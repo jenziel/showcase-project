@@ -32,16 +32,17 @@ function fetchSearchResults(query){
   })
  }
 
- function fetchRandomArtwork(num){
-  return fetch(`https://api.artic.edu/api/v1/artworks?page=${num}&limit=1`)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    return response.json();
-  })
- }
+//  function fetchRandomArtwork(num){
+//   console.log('num', num)
+//   return fetch(`https://api.artic.edu/api/v1/artworks?page=${num}&limit=1`)
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error(`Error ${response.status}: ${response.statusText}`);
+//     }
+//     return response.json();
+//   })
+//  }
 
-    export {  fetchSearchResults, fetchSelectedArtwork, fetchImageById, fetchRandomArtwork }
+    export {  fetchSearchResults, fetchSelectedArtwork, fetchImageById,  }
 
     

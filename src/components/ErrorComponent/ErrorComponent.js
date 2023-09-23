@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import "./ErrorComponent.css";
 
-function ErrorComponent({newError, resetError, resetLoading}) {
+function ErrorComponent({newError,  setIsLoading, setError}) {
   console.log('newError', newError)
     const handleReset = () => {
-      resetError();
-      resetLoading();
+      setIsLoading(false)
+      setError("")
     };
   
     return (
