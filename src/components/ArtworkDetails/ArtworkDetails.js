@@ -2,6 +2,7 @@ import "./ArtworkDetails.css";
 import { useState } from "react";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function ArtworkDetails({ selectedPiece, searchTerm }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,3 +63,8 @@ function ArtworkDetails({ selectedPiece, searchTerm }) {
   );
 }
 export default ArtworkDetails;
+
+ArtworkDetails.propTypes = {
+  selectedPiece: PropTypes.object,
+  searchTerm: PropTypes.string.isRequired,
+};

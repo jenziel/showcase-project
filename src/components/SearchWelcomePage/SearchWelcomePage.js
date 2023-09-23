@@ -1,4 +1,5 @@
 import "./SearchWelcomePage.css";
+import PropTypes from "prop-types";
 import SearchForm from "../SearchForm/SearchForm";
 
 import { Link } from "react-router-dom";
@@ -38,11 +39,12 @@ function SearchWelcomePage({
         return response.json();
       })
       .then((data) => {
-        updateSelectedPiece(data.data);
+        updateSelectedPiece(data.data[0]);
         setRandomizedId(data.data[0].id.toString());
         setIsLoading(false);
         setRandomNumberFetched(true);
       })
+      .then(console.log(selectedPiece, 'selectedPiece'))
       .catch((response) => {
         setError(response || "failed to fetch collection!");
       });
@@ -72,3 +74,11 @@ function SearchWelcomePage({
   );
 }
 export default SearchWelcomePage;
+
+SearchWelcomePage.propTypes = {
+  setError: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  selectedPiece: PropTypes.object,
+  updateSearchResults: PropTypes.func.isRequired,
+  updateSelectedPiece: PropTypes.func.isRequired,
+}

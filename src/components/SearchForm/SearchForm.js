@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./SearchForm.css";
 import { fetchSearchResults } from "../../apiCalls";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function SearchForm({ setError, setIsLoading, updateSearchResults }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,3 +47,9 @@ function SearchForm({ setError, setIsLoading, updateSearchResults }) {
   );
 }
 export default SearchForm;
+
+SearchForm.propTypes = {
+  setError: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  updateSearchResults: PropTypes.func.isRequired,
+}

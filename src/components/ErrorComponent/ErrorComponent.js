@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./ErrorComponent.css";
+import PropTypes from "prop-types";
 
 function ErrorComponent({ newError, setIsLoading, setError }) {
   console.log("newError", newError);
@@ -22,3 +23,9 @@ function ErrorComponent({ newError, setIsLoading, setError }) {
 }
 
 export default ErrorComponent;
+
+ErrorComponent.propTypes = {
+  newError: PropTypes.string.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
+};
