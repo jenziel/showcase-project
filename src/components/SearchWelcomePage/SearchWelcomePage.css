@@ -1,27 +1,30 @@
 .search-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 91vh;
-    background-image: url('../../images/AIC_BIG.jpeg');
-    background-size: 100% 100%;
-    padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 91vh;
+  background-image: url("../../images/AIC_BIG.jpeg");
+  background-size: 100% 100%;
+  padding: 0.5rem;
 }
+
 .search-instructions {
-    color: var(--white);
-    margin-bottom: 4vh;
+  color: var(--white);
+  margin-bottom: 4vh;
 }
+
 .random-btn {
-    background-color: transparent;
-    border: solid 2px var(--white);
-    border-radius: 8px;
-    margin-top: 10vh;
-    height: 5vh;
-    color: var(--white);
-    width: 10vw;
-    cursor: pointer;
+  background-color: transparent;
+  border: solid 2px var(--white);
+  border-radius: 8px;
+  margin-top: 10vh;
+  height: 5vh;
+  color: var(--white);
+  width: 10vw;
+  cursor: pointer;
 }
+
 .random-btn:hover {
-    background-color: var(--faded-teal);
+  background-color: var(--faded-teal);
 }

@@ -1,0 +1,18 @@
+.back-to-home-btn {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 2rem;
+}
+
+.credits {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+  height: 70vh;
+}
+
+.credits-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

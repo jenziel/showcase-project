@@ -1,70 +1,52 @@
-/* .search-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 91vh;
-    background-image: url('../../images/AIC_BIG.jpeg');
-    background-size: 100% 100%;
-    padding: .5rem;
-} */
 .search-bar {
-    height: 5vh;
-    width: 30vw;
-    border-radius: 8px;
-    padding-left: 1vw;
-    font-size: 1.7rem;
+  height: 5vh;
+  width: 30vw;
+  border-radius: 8px;
+  padding-left: 1vw;
+  font-size: 1.7rem;
 }
+
 .search-btn {
-    margin-left: .5vw;
-    height: 5.65vh;
-    width: 3vw;
-    border-radius: 8px;
-    background-color: lightgray;
-    font-size: 1.3rem;
-    cursor:pointer;
+  margin-left: 0.5vw;
+  height: 5.65vh;
+  width: 3vw;
+  border-radius: 8px;
+  background-color: lightgray;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
+
 .search-btn:hover {
-    background-color: var(--faded-teal);
-    color: var(--white);
-    border: 2px solid var(--white);
+  background-color: var(--faded-teal);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
-.search-page>h1 {
-    color: var(--white);
-    font-size: 48px;
-    margin-bottom: 15vh;
-    margin-top: 10vh;
+
+.search-page > h1 {
+  color: var(--white);
+  font-size: 48px;
+  margin-bottom: 15vh;
+  margin-top: 10vh;
 }
-/* .search-instructions {
-    color: var(--white);
-    margin-bottom: 4vh;
-} */
-/* .random-btn {
-    background-color: transparent;
-    border: solid 2px var(--white);
-    border-radius: 8px;
-    margin-top: 10vh;
-    height: 5vh;
-    color: var(--white);
-    width: 10vw;
-} */
-.search-bar-box{
-    display: flex;
-    flex-direction: row;
-   align-items: baseline;
+
+.search-bar-box {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
+
 @media (max-width: 768px) {
-   .search-btn {
+  .search-btn {
     width: 15vw;
     font-size: 1.7rem;
-   }
-   .search-bar {
-    width: 75vw;
-   }
-   .random-btn {
-    width: 20vw;
-   }
-   .search-bar {
-    font-size: 1.7rem;
-   }
   }
+  .search-bar {
+    width: 75vw;
+  }
+  .random-btn {
+    width: 20vw;
+  }
+  .search-bar {
+    font-size: 1.7rem;
+  }
+}
