@@ -37,7 +37,7 @@
 }
 
 .details-title {
-  margin-top: 10vh;
+  margin-top: 5vh;
   font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
@@ -59,4 +59,40 @@
 
 .details-description {
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .details-page {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+
+  .details-large-image {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .details-large-image > img {
+    height: auto;
+    width: 90vw;
+    margin-left: 0rem;
+  }
+  .details-title {
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  .details-top-section {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .details-short-info {
+    width: 90vw;
+    display: flex;
+  }
+  .details-back-btn {
+    margin-top: 1rem;
+  }
 }

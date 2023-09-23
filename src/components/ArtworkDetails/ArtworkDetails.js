@@ -21,7 +21,7 @@ function ArtworkDetails({ selectedPiece, searchTerm }) {
             to={`/search/${searchTerm}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
           >
-            <button>←</button>
+            <button className='details-back-btn'>←</button>
           </Link>
           <p className='details-title'> {selectedPiece.title}</p>
           <p className='details-artist'>{selectedPiece.artist_title}</p>

@@ -58,4 +58,30 @@
   .results-container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .results-search-bar {
+    margin-left: 1rem;
+  }
+  .no-results-msg {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .back-to-search-btn {
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
+    height: 3rem;
+    width: 6rem;
+    margin-top: 1rem;
+  }
+  .results-top-row{
+    display: flex;
+    flex-direction: column-reverse;
+   
+  }
+  .button-placement{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
