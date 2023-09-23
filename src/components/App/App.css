@@ -1,16 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Molengo&display=swap");
 
 :root {
   --dark-red: #990001;
   --black: #000000;
-  --white: #FFFFFF;
+  --white: #ffffff;
   --darkgray: #3b3b3b;
   --faded-teal: rgba(58, 171, 148, 0.44);
-  /* //#292929; */
 }
 
 .App {
-  text-align: center; 
-  font-family: 'Molengo', sans-serif;
+  text-align: center;
+  font-family: "Molengo", sans-serif;
 }
 
+button {
+  border-radius: 6px;
+  border: solid 1px var(--darkgray);
+}
+
+button:hover {
+  background-color: var(--faded-teal);
+  border: solid 2px var(--white);
+  cursor: pointer;
+}

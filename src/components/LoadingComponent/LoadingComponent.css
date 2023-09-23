@@ -16,15 +16,24 @@
     justify-content: center;
     align-items: center;
   }
-/*   
+
+.spinner-section{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.spinner{
+  height: 4rem;
+}
   @media (prefers-reduced-motion: no-preference) {
-    .Load-image {
-      animation: Load-image-spin infinite 20s linear;
+    .spinner{
+      animation: spinner-spin infinite 8s linear;
     }
   }
   
 
-@keyframes Load-image-spin {
+@keyframes spinner-spin {
     from {
       transform: rotate(0deg);
     }
@@ -32,4 +41,3 @@
       transform: rotate(360deg);
     }
   }
-   */

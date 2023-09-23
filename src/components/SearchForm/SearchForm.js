@@ -1,27 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./SearchForm.css";
-import {fetchSearchResults} from "../../apiCalls"
-import {Link} from "react-router-dom"
+import { fetchSearchResults } from "../../apiCalls";
+import { Link } from "react-router-dom";
 
-function SearchForm({setError, setIsLoading, updateSearchResults}) {
-  
+function SearchForm({ setError, setIsLoading, updateSearchResults }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]); 
-  const currentSearch = searchQuery
-  setIsLoading(false)
+  const [searchResults, setSearchResults] = useState([]);
+  const currentSearch = searchQuery;
 
   const handleSearch = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetchSearchResults(searchQuery)
-    .then((data)=>{
-      console.log("data", data.data)
-      setSearchResults(data.data);
-      setIsLoading(false)
-      updateSearchResults(data.data, currentSearch)
-    })
-    .catch((response) => {
-      setError(response || "failed to fetch collection!");
-    });
+      .then((data) => {
+        setSearchResults(data.data);
+        updateSearchResults(data.data, currentSearch);
+      })
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((response) => {
+        setError(response || "failed to fetch collection!");
+      });
     clearInput();
   };
 
@@ -29,27 +28,21 @@ function SearchForm({setError, setIsLoading, updateSearchResults}) {
     setSearchQuery("");
   };
 
-  useEffect(() => {
-    console.log(searchQuery)
-  }, [searchQuery])
-
-
   return (
-    
-      <div className='search-bar-box'>
-        <input
-          className='search-bar'
-          type='text'
-          placeholder='Search...'
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
-        />
-        <Link to={`/search/${searchQuery}`}>
+    <div className='search-bar-box'>
+      <input
+        className='search-bar'
+        type='text'
+        placeholder='Search...'
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
+      />
+      <Link to={`/search/${searchQuery}`}>
         <button className='search-btn' onClick={handleSearch}>
           go
         </button>
-        </Link>
-      </div>
+      </Link>
+    </div>
   );
 }
 export default SearchForm;
