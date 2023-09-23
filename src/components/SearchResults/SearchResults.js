@@ -1,7 +1,8 @@
 import "./SearchResults.css";
-import ArtworkCards from "../ArtworkCards/ArtworkCards";
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react';
+import PropTypes from "prop-types";
+import ArtworkCards from "../ArtworkCards/ArtworkCards";
 import SearchForm from "../SearchForm/SearchForm";
 // import glassesGuy from "../../images/glasses-guy.png"
 
@@ -63,3 +64,14 @@ function SearchResults({
 }
 
 export default SearchResults;
+
+
+SearchResults.propTypes = {
+results: PropTypes.array.isRequired,
+getArtworkById: PropTypes.func.isRequired,
+getImageId: PropTypes.func.isRequired,
+setIsLoading: PropTypes.func.isRequired,
+searchTerm: PropTypes.string.isRequired,
+setError: PropTypes.func.isRequired,
+updateSearchResults: PropTypes.func.isRequired
+}

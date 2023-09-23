@@ -51,3 +51,12 @@ function ArtworkCards({
 }
 
 export default ArtworkCards;
+
+ArtworkCards.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  getArtworkById: PropTypes.func.isRequired,
+  getImageId: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  alt: PropTypes.string.isRequired
+}
