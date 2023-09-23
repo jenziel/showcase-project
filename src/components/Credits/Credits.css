@@ -16,3 +16,25 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+
+@media (max-width: 768px) {
+  .credits {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .credits-list {
+    text-align: left;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  .credits-list>h1 {
+    /* text-align: center; */
+  }
+  .back-to-home-btn {
+    margin-left: 0rem;
+  }
+}

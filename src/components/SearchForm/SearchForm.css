@@ -9,7 +9,7 @@
 .search-btn {
   margin-left: 0.5vw;
   height: 5.65vh;
-  width: 3vw;
+  width: 7vw;
   border-radius: 8px;
   background-color: lightgray;
   font-size: 1.3rem;
@@ -44,7 +44,7 @@
     width: 75vw;
   }
   .random-btn {
-    width: 20vw;
+    width: 25vw;
   }
   .search-bar {
     font-size: 1.7rem;

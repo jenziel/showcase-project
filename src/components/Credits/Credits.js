@@ -32,7 +32,6 @@ function Credits() {
           with the public.
         </p>
       </div>
-      <p></p>
     </div>
   );
 }
