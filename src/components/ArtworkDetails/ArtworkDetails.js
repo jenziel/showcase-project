@@ -5,14 +5,11 @@ import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
 
 function ArtworkDetails({selectedPiece, searchTerm}){
-    // const [bigImage, setBigImage] = useState("")
-    // setBigImage(`https://www.artic.edu/iiif/2/${selectedPiece.image_id}/full/843,/0/default.jpg`)
     console.log("hi", selectedPiece)
     const [isLoading, setIsLoading] = useState(true)
+    
 console.log(searchTerm, "search term")
-//    useEffect(()=> {
-//     setIsLoading(true)
-//    }, [selectedPiece])
+
 
    const handleImageLoad = () => {
     setIsLoading(false); 

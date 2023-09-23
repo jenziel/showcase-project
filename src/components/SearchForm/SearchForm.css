@@ -22,6 +22,12 @@
     border-radius: 8px;
     background-color: lightgray;
     font-size: 1.3rem;
+    cursor:pointer;
+}
+.search-btn:hover {
+    background-color: var(--faded-teal);
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 .search-page>h1 {
     color: var(--white);

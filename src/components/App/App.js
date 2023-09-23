@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import LoadingComponent from '../LoadingComponent/LoadingComponent';
-import { fetchCollection, fetchSelectedArtwork, fetchSearchResults, fetchImageById } from '../../apiCalls';
+import {  fetchSelectedArtwork, fetchSearchResults, fetchImageById } from '../../apiCalls';
 import Header from '../Header/Header'
 import {useState, useEffect} from 'react'
 import ErrorComponent from '../ErrorComponent/ErrorComponent'
@@ -10,9 +10,10 @@ import SearchResults from '../SearchResults/SearchResults';
 import ArtworkDetails from '../ArtworkDetails/ArtworkDetails'
 import ArtworkCards from '../ArtworkCards/ArtworkCards';
 import SearchWelcomePage from '../SearchWelcomePage/SearchWelcomePage'
+import RandomDetails from '../RandomDetails/RandomDetails'
 
 function App() {
-  const [newError, setError] = useState(null); 
+  const [newError, setError] = useState(""); 
   const [isLoading, setIsLoading] = useState(false);
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [searchTerm, setSearchTerm] = useState("")
@@ -22,7 +23,7 @@ function App() {
     console.log("selectedPiece:", selectedPiece)
   }, [selectedPiece])
   
-  function getArtworkById(id){
+  function getArtworkById(id){ 
     fetchSelectedArtwork(id)
     .then((data)=>{
       console.log("data", data.data)
@@ -44,17 +45,7 @@ function App() {
       setError(response || "failed to fetch collection!");
     });
   }
-  useEffect(() => {
-    console.log("newError:", newError)
-  }, [newError])
 
-  const resetError = () => {
-    setError(null);
-  };
-
-  const resetLoading = () => {
-    setIsLoading(false);
-  };
 
   const updateSelectedPiece = (artObject) => {
     setSelectedPiece(artObject)
@@ -63,30 +54,34 @@ function App() {
     setSearchResults(results);
     setSearchTerm(currentSearchQuery)
   };
+  
 
   return (
     <div className="App">
       <Header />
       {newError? (
         <ErrorComponent newError={newError}
-        resetError={resetError}
-        resetLoading={resetLoading}/>
+        setIsLoading={setIsLoading}
+        setError={setError}
+        />
       ) : 
       isLoading ? (
         <LoadingComponent/> 
       ) : (
         <Routes>
           <Route path='/' 
-          element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} />}/>
+          element={<SearchWelcomePage setIsLoading={setIsLoading} setError={setError} selectedPiece={selectedPiece} updateSearchResults={updateSearchResults} updateSelectedPiece={updateSelectedPiece} />}/>
           <Route path='/search/:searchTerm' element={<SearchResults results={searchResults} getArtworkById={getArtworkById} getImageId={getImageId} setIsLoading={setIsLoading} setError={setError} updateSearchResults={updateSearchResults} searchTerm={searchTerm}/>}/>
            <Route path='artworks/:id' element={<ArtworkDetails selectedPiece={selectedPiece} searchTerm={searchTerm}/>}/>
+          <Route path='/random/'element={<RandomDetails selectedPiece={selectedPiece}/>}/>
            <Route
               path='*'
               element={
                 <ErrorComponent
                   newError={newError}
-                  resetError={resetError}
-                  resetLoading={resetLoading}
+                  setIsLoading={setIsLoading}
+                  setError={setError}
+    
                 />}/>
         </Routes>
       )}
