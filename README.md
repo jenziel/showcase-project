@@ -24,7 +24,7 @@ This application allows users to browse an extensive art collection, sourced fro
 
 ## Features
 
-- **Browse Artworks**: Upon visiting the main page, users are presented with a gallery of movies available for viewing.
+- **Browse Artworks**: Upon visiting the main page, users can enter any search terms and view results on a search results page.
 - **Artwork Details**: By clicking on a search result, users can view detailed information about that specific piece. This includes dimensions, materials, and a description.
 
 ## Live site:
