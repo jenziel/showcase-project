@@ -26,7 +26,7 @@ function SearchResults({
       <div className='results-search-bar'>
         <div className='results-top-row'>
           <h1>Search The Collection</h1>
-          <Link to='/' className="button-placement" style={{ color: "inherit", textDecoration: "inherit" }}>
+          <Link to='/showcase-project' className="button-placement" style={{ color: "inherit", textDecoration: "inherit" }}>
             <button className='back-to-search-btn'>Back to Home</button>
           </Link>
         </div>

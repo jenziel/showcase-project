@@ -10,7 +10,7 @@ function RandomDetails({selectedPiece}){
         <div className="details-page">
             <div className="details-top-section">
             <div className="details-short-info">
-              <Link  to={`/`}
+              <Link  to={`/showcase-project`}
         style={{ color: "inherit", textDecoration: "inherit" }}>
               <button className='details-back-btn'>←</button>
               </Link>

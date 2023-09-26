@@ -68,7 +68,7 @@ function App() {
       ) : (
         <Routes>
           <Route
-            path='/'
+            path='/showcase-project/'
             element={
               <SearchWelcomePage
                 setIsLoading={setIsLoading}
@@ -94,7 +94,7 @@ function App() {
             }
           />
           <Route
-            path='artworks/:id'
+            path='/artworks/:id'
             element={
               <ArtworkDetails
                 selectedPiece={selectedPiece}

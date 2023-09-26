@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jenziel/showcase-project.git"
+    "url": "git+https://github.com/jenziel/showcase-project.git"
   },
   "homepage": "https://jenziel.github.io/showcase-project/",
   "private": true,
